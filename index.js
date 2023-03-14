@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const router = require("./routes/bookRouters");
 const cors = require("cors");
 const app = express();
-// const port = process.env.PORT || 5000;
-const Base_URL = process.env.BASE_URL;
+const port = process.env.PORT || 5000;
+// const Base_URL = process.env.BASE_URL;
 
 // middleWares
 app.use(express.json());
@@ -18,7 +18,7 @@ mongoose
     console.log("connected to  MongooseDB");
   })
   .then(() => {
-    app.listen(Base_URL);
+    app.listen(port);
     // console.log("connect to port");
   })
   .catch((error) => {
@@ -31,3 +31,4 @@ app.get("/", (req, res) => {
 });
 
 // app.listen(5000);
+
